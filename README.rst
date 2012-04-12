@@ -13,11 +13,11 @@ Welcome to nose2
 nose2 is the next generation of nicer testing for Python, based
 on the plugins branch of unittest2. nose2 aims to improve on nose by:
 
- * providing a better plugin api
- * being easier for users to configure
- * simplifying internal interfaces and processes
- * supporting Python 2 and 3 from the same codebase, without translation
- * encourging greater community involvment in its development
+* providing a better plugin api
+* being easier for users to configure
+* simplifying internal interfaces and processes
+* supporting Python 2 and 3 from the same codebase, without translation
+* encourging greater community involvment in its development
 
 In service of some those goals, some features of nose *will not* be
 supported in nose2. See `differences`_ for a thorough rundown.

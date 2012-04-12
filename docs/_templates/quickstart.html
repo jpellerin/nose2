@@ -1,0 +1,64 @@
+<h5>Install</h5>
+<div class="highlight-sh">
+  <div class="highlight"><pre>pip install nose2</pre>
+  </div>
+</div>
+<h5>test.py</h5>
+<div class="highlight-python">
+  <div class="highlight"><pre><span class="kn">from</span> <span class="nn">nose2.compat</span> <span class="kn">import</span> <span class="n">unittest</span>
+<span class="kn">from</span> <span class="nn">nose2.tools</span> <span class="kn">import</span> <span class="n">params</span>
+
+
+<span class="k">def</span> <span class="nf">tests_can_be_functions</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">tests_can_be_generators</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">check</span><span class="p">,</span> <span class="n">i</span>
+
+
+<span class="nd">@params</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  
+<span class="k">def</span> <span class="nf">tests_can_take_parameters</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">TestsCanBeUnittestTestCases</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_one</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">TestsCanBePlainClasses</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<h5>Run</h5>
+<div class="highlight-sh"><div class="highlight"><pre>nose2 -v
+</pre></div>
+</div>
+<div class="highlight-python"><pre>test.TestsCanBePlainClasses.test ... ok
+test.tests_can_be_generators:1
+1 ... ok
+test.tests_can_be_generators:2
+2 ... ok
+test.tests_can_be_generators:3
+3 ... ok
+test.tests_can_take_parameters:1
+1 ... ok
+test.tests_can_take_parameters:2
+2 ... ok
+test.tests_can_take_parameters:3
+3 ... ok
+test.FunctionTestCase (tests_can_be_functions) ... ok
+test_one (test.TestsCanBeUnittestTestCases) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK
+</pre>
+</div>

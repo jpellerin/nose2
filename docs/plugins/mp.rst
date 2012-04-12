@@ -28,7 +28,7 @@ Or pass the module with the :option:`--plugin` command-line option::
 Then configure the number of processes to run. You can do that either
 with the :option:`-N` option::
 
-  nose2 -N 2
+  nose2 -N=2
 
 or by setting ``processes`` in the ``[multiprocess]`` section of a
 config file::

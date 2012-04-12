@@ -14,7 +14,7 @@ can also pass plugin module names to exclude to a
 keyword argument.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    plugins/discovery
    plugins/functions
@@ -41,7 +41,7 @@ the command line. You can also pass plugin module names to a
 argument.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    plugins/junitxml
    plugins/attrib

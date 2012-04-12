@@ -28,10 +28,6 @@ Within test modules, nose2 will load tests from
 :class:`unittest.TestCase` subclasses, and from test functions
 (functions whose names begin with "test").
 
-.. todo ::
-
-   ... and test classes (classes whose names begin with "Test")
-
 To change the place discovery starts, or to change the top-level
 importable directory of the project, use the :option:`-s` and
 :option:`-t` options.
