@@ -23,6 +23,8 @@ class GreenMP(events.Plugin):
     def moduleLoadedSuite(self, event):
         event.suite.__class__ = GreenSuite
 
+    # FIXME startTestRun to set executor that calls gevent.joinall()
+
 
 class GreenSuite(unittest.TestSuite):
 
@@ -56,8 +58,8 @@ class GreenSuite(unittest.TestSuite):
             self._handleModuleTearDown(result)
             result._testRunEntered = False
 
-        gevent.joinall(jobs, timeout=60)
-        return result
+        gevent.joinall(jobs, timeout=60) # fixme the executor should do this
+        return result # fixme attach jobs to result?
 
 # from unittest.suite
 def _isnotsuite(test):
